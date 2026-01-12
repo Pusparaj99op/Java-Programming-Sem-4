@@ -1,7 +1,6 @@
-// Aim: Demonstrate method overloading in Java
+// Aim:write a program to Demonstrate method overloading in Java
 
 import java.io.*;
-
 class Product
 {
     public int multiply(int a, int b) {return a * b;} // Multiplying 2 integer values
@@ -16,7 +15,6 @@ class Student {
     // Student ID with rollNo first
     public void studentId(int rollNo, String name) {System.out.println("Roll-No: " + rollNo + ", Name: " + name);}
 }
-
 class Runner {
     public static void main(String[] args) {
 
@@ -30,5 +28,4 @@ class Runner {
         Student s = new Student();
         s.studentId("Sweta", 1);
         s.studentId(2, "Gudly");
-    }
-}
+    }}
