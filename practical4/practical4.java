@@ -13,7 +13,7 @@
 // 1. Single Inheritance
 class Vehicle {
     void display() {
-        system.out.println("====================Start Single Inheritance================================");
+        System.out.println("====================Start Single Inheritance================================");
         System.out.println("This is a vehicle.");
     }
 }
@@ -22,11 +22,11 @@ class Car extends Vehicle {
         System.out.println("This is a car.");
     }
 }
-Class SingleInheritance {
+class SingleInheritance {
     public static void main(String[] args) {
         Car car = new Car();
         car.display(); // This will call the display method of Car class
-        system.out.println("====================End Single Inheritance================================");
+        System.out.println("====================End Single Inheritance================================");
     }
 }
 
@@ -50,11 +50,12 @@ class Deer extends Lion {
     }
 }
 
-Class MultilevelInheritance{
-public static void main(String[] args) {
-    Deer deer = new Deer();
-    deer.eat(); // This will call the eat method of Deer class
-    system.out.println("====================End Multilevel Inheritance================================");
+class MultilevelInheritance{
+    public static void main(String[] args) {
+        Deer deer = new Deer();
+        deer.eat(); // This will call the eat method of Deer class
+        System.out.println("====================End Multilevel Inheritance================================");
+    }
 }
 
 // ================================================================================================
@@ -81,7 +82,7 @@ class HierarchicalInheritance {
         Square square = new Square();
         circle.display(); // This will call the display method of Circle class
         square.display(); // This will call the display method of Square class
-        system.out.println("====================End Hierarchical Inheritance================================");
+        System.out.println("====================End Hierarchical Inheritance================================");
     }
 }
 
@@ -89,18 +90,23 @@ class HierarchicalInheritance {
 // 4. Multiple Inheritance (using interfaces)
 interface LandVehicle {
     void displayA();
-    System.out.println("====================Start Multiple Inheritance================================");
-    System.out.println("This is interface Of Landvehicle.");
 }
 interface WaterVehicle {
     void displayB();
-        System.out.println("This is interface Of WaterVehicle.");
 }
 class MultipleInheritance implements LandVehicle, WaterVehicle {
-        public static void main(String[] args) {
+    public void displayA() {
+        System.out.println("This is LandVehicle implementation.");
+    }
+
+    public void displayB() {
+        System.out.println("This is WaterVehicle implementation.");
+    }
+
+    public static void main(String[] args) {
         MultipleInheritance mi = new MultipleInheritance();
         mi.displayA(); // This will call the displayA method of MultipleInheritance class
         mi.displayB(); // This will call the displayB method of MultipleInheritance class
-        system.out.println("====================Ends Multiple Inheritance================================");
+        System.out.println("====================Ends Multiple Inheritance================================");
     }
 }
