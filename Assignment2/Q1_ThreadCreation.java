@@ -24,7 +24,8 @@ class ThreadByExtension extends Thread {
             try {
                 Thread.sleep(200);
             } catch (InterruptedException e) {
-                System.out.println(getName() + " interrupted.");
+                Thread.currentThread().interrupt();
+                return;
             }
         }
         System.out.println("[Way 1 – Extend] " + getName() + " finished.");
@@ -49,7 +50,8 @@ class ThreadByRunnable implements Runnable {
             try {
                 Thread.sleep(200);
             } catch (InterruptedException e) {
-                System.out.println(tName + " interrupted.");
+                Thread.currentThread().interrupt();
+                return;
             }
         }
         System.out.println("[Way 2 – Runnable] " + tName + " finished.");
@@ -87,7 +89,10 @@ class Q1_ThreadCreation {
             public void run() {
                 for (int i = 1; i <= 3; i++) {
                     System.out.println("[Way 3 – Anonymous] Anon-Thread step " + i);
-                    try { Thread.sleep(200); } catch (InterruptedException e) { /* ignored */ }
+                    try { Thread.sleep(200); } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        return;
+                    }
                 }
                 System.out.println("[Way 3 – Anonymous] Anon-Thread finished.");
             }
@@ -97,7 +102,10 @@ class Q1_ThreadCreation {
         Thread l1 = new Thread(() -> {
             for (int i = 1; i <= 3; i++) {
                 System.out.println("[Way 3 – Lambda] Lambda-Thread step " + i);
-                try { Thread.sleep(200); } catch (InterruptedException e) { /* ignored */ }
+                try { Thread.sleep(200); } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
             }
             System.out.println("[Way 3 – Lambda] Lambda-Thread finished.");
         }, "Lambda-Thread");

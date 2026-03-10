@@ -30,6 +30,7 @@ class SharedResource {
                 wait();                 // releases lock and waits for notify/notifyAll
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                return;                 // exit to avoid re-entering wait() with interrupt set
             }
         }
         System.out.println("[" + consumerName + "] Data consumed.");
@@ -84,7 +85,12 @@ class Q3_ThreadMethods {
         System.out.println("\n===== 3. isAlive() =====");
 
         Thread t3 = new Thread(() -> {
-            try { Thread.sleep(400); } catch (InterruptedException e) { /* ignored */ }
+            try {
+                Thread.sleep(400);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return;
+            }
         }, "Alive-Demo-Thread");
 
         System.out.println("isAlive() before start : " + t3.isAlive());   // false

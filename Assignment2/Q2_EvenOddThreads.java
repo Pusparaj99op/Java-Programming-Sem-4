@@ -20,7 +20,8 @@ class EvenThread extends Thread {
             try {
                 Thread.sleep(10);   // small delay to interleave output with Thread 2
             } catch (InterruptedException e) {
-                System.out.println(getName() + " interrupted.");
+                Thread.currentThread().interrupt();
+                return;
             }
         }
         System.out.println("[" + getName() + "] Done.");
@@ -44,7 +45,8 @@ class OddThread extends Thread {
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
-                System.out.println(getName() + " interrupted.");
+                Thread.currentThread().interrupt();
+                return;
             }
         }
         System.out.println("[" + getName() + "] Done.");
