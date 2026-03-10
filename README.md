@@ -92,3 +92,30 @@
     - [x]  Program Done
     - [ ]  Written
     - [ ]  Checked
+
+---
+
+# Assignment 2 – Threads, Date & Time
+
+**Date:** 10/03/2026
+
+- Q1: Different ways of creating Threads
+    - [x]  Program Done
+    - [ ]  Written
+    - [ ]  Checked
+- Q2: Two threads – even numbers 1→100 and odd numbers 100→1
+    - [x]  Program Done
+    - [ ]  Written
+    - [ ]  Checked
+- Q3: Thread methods – getName, setName, currentThread, isAlive, sleep, wait, notify, notifyAll
+    - [x]  Program Done
+    - [ ]  Written
+    - [ ]  Checked
+- Q4: Retrieve date & time fields using the Calendar class
+    - [x]  Program Done
+    - [ ]  Written
+    - [ ]  Checked
+- Q5: Convert String to Date using SimpleDateFormat
+    - [x]  Program Done
+    - [ ]  Written
+    - [ ]  Checked
